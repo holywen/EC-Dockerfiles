@@ -3,23 +3,25 @@
 This is example docker files on how to put Electric Flow Server and Electric Flow Agent into a docker container.
 
 ##USAGE:
-To build a ElectricFlow Server image, you'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
+###Build a ElectricFlow Server image
+You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
 ```
   cd commanderServer
   ./build.sh
 ```
-Run it:
+###Run it:
 ```
   cd commanderServer
   /run.sh
 ```
 
-To build a ElectricFlow Agent image, you'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
+###Build a ElectricFlow Agent image
+You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
 ```
   cd commanderAgent
   ./build.sh
 ```
-Run it:
+###Run it:
 ```
   cd commanderAgent
   ./run.sh
