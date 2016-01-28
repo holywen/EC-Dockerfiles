@@ -10,6 +10,7 @@ RUN chmod +x /tmp/updatecmdsvrhostnameconf.sh
 #so we use the script to update the server name settings in command server
 RUN addgroup ubuntu
 RUN useradd -m -g ubuntu ubuntu
+
 RUN tmp/ElectricFlow-* --mode silent --installWeb --installRepository --installDatabase --installAgent --installServer --unixServerUser ubuntu --unixServerGroup ubuntu --unixAgentUser ubuntu --unixAgentGroup ubuntu
 RUN rm -f /tmp/ElectricFlow-*
 
