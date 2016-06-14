@@ -4,26 +4,26 @@ This is example docker files on how to put Electric Flow Server and Electric Flo
 
 ##USAGE:
 ###Build a ElectricFlow Server image
-You'll need to first copy latest ElectricFlow installer into the flowServer folder, then:
+You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
 ```
-  cd flowServer
+  cd commanderServer
   ./build.sh
 ```
 ###Run it:
 ```
-  cd flowServer
+  cd commanderServer
   /run.sh
 ```
 
 ###Build a ElectricFlow Agent image
-You'll need to first copy latest ElectricFlow installer into the flowServer folder, then:
+You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
 ```
-  cd flowAgent
+  cd commanderAgent
   ./build.sh
 ```
 ###Run it:
 ```
-  cd flowAgent
+  cd commanderAgent
   ./run.sh
 ```
 
