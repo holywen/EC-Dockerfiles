@@ -5,8 +5,17 @@ services:
     ports:
      - "443:443"
      - "8443:8443"
+    volumes:
+     - ./plugins:/opt/electriccloud/electriccommander/plugins
+     - ./workspace:/opt/electriccloud/electriccommander/workspace
+     - ./builtin:/opt/electriccloud/electriccommander/builtin
+     - ./repository-data:/opt/electriccloud/electriccommander/repository-data
   agent1:
+    depends_on:
+     - commanderserver
     build: "commanderAgent"
     ports:
      - "7800:7800"
-
+    volumes:
+     - ./plugins:/opt/electriccloud/electriccommander/plugins
+     - ./workspace:/opt/electriccloud/electriccommander/workspace
