@@ -12,6 +12,7 @@ RUN addgroup ubuntu
 RUN useradd -m -g ubuntu ubuntu
 RUN tmp/ElectricFlow-* --mode silent --installWeb --installRepository --installDatabase --installAgent --installServer --unixServerUser ubuntu --unixServerGroup ubuntu --unixAgentUser ubuntu --unixAgentGroup ubuntu
 RUN rm -f /tmp/ElectricFlow-*
+RUN echo "set.default.COMMANDER_IGNORE_SERVER_MISMATCH=1" >> /opt/electriccloud/electriccommander/conf/wrapper.conf
 
 EXPOSE 8443 443
 #we need to make sure the server name here {commanderserver} is the same as the -h {commanderserver} in the run.sh file
