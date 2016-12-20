@@ -3,6 +3,14 @@
 This is example docker files on how to put Electric Flow Server and Electric Flow Agent into a docker container.
 
 ##USAGE:
+
+###Build a Docker Composer to start an Electric Flow Server and a Electric Flow Agent together:
+```
+  docker-composer up
+```
+
+you'll need to add the agent resource to the Flow Server using hostname "agent1".
+
 ###Build a ElectricFlow Server image
 You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
 ```
@@ -26,13 +34,6 @@ You'll need to first copy latest ElectricFlow installer into the commanderServer
   cd commanderAgent
   ./run.sh
 ```
-
-###Build a Docker Composer to start an Electric Flow Server and a Electric Flow Agent together:
-```
-  docker-composer up
-```
-
-you'll need to add the agent resource to the Flow Server using hostname "agent1".
 
 ##AUTHOR:
 Shaohua Wen, Electric Cloud Professional Service Engineer swen@electric-cloud.com, with original dockerfile example from Nikhil Vaze <nvaze@electric-cloud.com>
