@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t commanderserver .
+docker build -t holywen/commanderserver .

@@ -1,0 +1,12 @@
+version: '2'
+services:
+  commanderserver:
+    build: "commanderServer"
+    ports:
+     - "443:443"
+     - "8443:8443"
+  agent1:
+    build: "commanderAgent"
+    ports:
+     - "7800:7800"
+

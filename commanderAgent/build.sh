@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t commanderagent .
+docker build -t holywen/commanderagent .

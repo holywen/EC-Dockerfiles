@@ -15,4 +15,4 @@ RUN rm -f /tmp/ElectricFlow-*
 
 EXPOSE 8443 443
 #we need to make sure the server name here {commanderserver} is the same as the -h {commanderserver} in the run.sh file
-CMD /tmp/updatecmdsvrhostnameconf.sh commanderserver && /etc/init.d/commanderServer start && /etc/init.d/commanderAgent start && /etc/init.d/commanderApache start && tail -F /opt/electriccloud/electriccommander/logs/commander.log
+CMD /tmp/updatecmdsvrhostnameconf.sh commanderserver && /etc/init.d/commanderServer start && /etc/init.d/commanderAgent start && /etc/init.d/commanderApache start && /etc/init.d/commanderRepository start && tail -F /opt/electriccloud/electriccommander/logs/commander.log
