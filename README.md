@@ -21,7 +21,7 @@ Step 3: Run:
   docker-compose logs -f
 ```
 
-Step 4: open http://<you docker machine ip>:1936/haproxy?stats
+Step 4: open http://_you docker machine ip_:1936/haproxy?stats
 
 Step 5: when you see commander backend is up and running (green in haproxy page), 
 ```
@@ -30,7 +30,7 @@ Step 5: when you see commander backend is up and running (green in haproxy page)
   /tmp/import_license_and_create_resource.sh
 ```
 
-Step 6: open https://<you docker machine ip> and login with admin/changeme
+Step 6: open https://_you docker machine ip_ and login with admin/changeme
 
 
 ##AUTHOR:
