@@ -21,7 +21,7 @@ Step 4: open http://<you docker machine ip>:1936/haproxy?stats
 Step 5: when you see commander backend is up and running (green in haproxy page), 
 ```
   docker ps
-  docker exec -it < any of commanderserver container id> bash
+  docker exec -it <any of commanderserver container id> bash
   /tmp/import_license_and_create_resource.sh
 ```
 
