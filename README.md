@@ -9,7 +9,7 @@ This is example docker files on how to put Electric Flow Server and Electric Flo
   docker-composer up
 ```
 
-you'll need to add the agent resource to the Flow Server using hostname "agent1".
+you'll need to add the agent resource to the Flow Server using hostname "agent".
 
 ###Build a ElectricFlow Server image
 You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
