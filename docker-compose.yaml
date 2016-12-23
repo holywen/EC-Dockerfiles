@@ -14,7 +14,7 @@ services:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
       - ./builtin:/opt/electriccloud/electriccommander/builtin
-      - ./conf/:/opt/electriccloud/electriccommander/conf/
+      - ./conf:/opt/electriccloud/electriccommander/conf
       
   commanderserver2:
     depends_on:
@@ -30,7 +30,7 @@ services:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
       - ./builtin:/opt/electriccloud/electriccommander/builtin
-      - ./conf/:/opt/electriccloud/electriccommander/conf/
+      - ./conf:/opt/electriccloud/electriccommander/conf
 
   commanderserver3:
     depends_on:
@@ -46,7 +46,7 @@ services:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
       - ./builtin:/opt/electriccloud/electriccommander/builtin
-      - ./conf/:/opt/electriccloud/electriccommander/conf/
+      - ./conf:/opt/electriccloud/electriccommander/conf
       
   commanderapache:
     depends_on:
