@@ -17,7 +17,8 @@ Step 2: copy ElectricFlow license.xml to conf folder
 Step 3: Run:
 
 ```
-  docker-composer up
+  docker-compose up -d
+  docker-compose logs -f
 ```
 
 Step 4: open http://<you docker machine ip>:1936/haproxy?stats
@@ -31,29 +32,6 @@ Step 5: when you see commander backend is up and running (green in haproxy page)
 
 Step 6: open https://<you docker machine ip> and login with admin/changeme
 
-###Build a ElectricFlow Server image
-You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
-```
-  cd commanderServer
-  ./build.sh
-```
-###Run it:
-```
-  cd commanderServer
-  /run.sh
-```
-
-###Build a ElectricFlow Agent image
-You'll need to first copy latest ElectricFlow installer into the commanderServer folder, then:
-```
-  cd commanderAgent
-  ./build.sh
-```
-###Run it:
-```
-  cd commanderAgent
-  ./run.sh
-```
 
 ##AUTHOR:
 Shaohua Wen, Electric Cloud Professional Service Engineer swen@electric-cloud.com, with original dockerfile example from Nikhil Vaze <nvaze@electric-cloud.com>
