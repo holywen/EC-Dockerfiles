@@ -1,6 +1,6 @@
 # EC-Dockerfiles
 ##DESCRIPTION:
-This is example docker files on how to put Electric Flow Server and Electric Flow Agent into a docker container.
+This is example on how to create and run Electric Flow Server cluster with a  Docker Compose.
 
 ##USAGE:
 
