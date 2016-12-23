@@ -9,5 +9,5 @@ RUN /tmp/ElectricFlow-* --mode silent --installAgent --unixAgentUser ubuntu --un
 RUN rm -f /tmp/ElectricFlow-*
  
 EXPOSE 7800
-CMD /etc/init.d/commanderAgent console
+CMD /etc/init.d/commanderAgent start && tail -F /opt/electriccloud/electriccommander/logs/agent/agent.log
 

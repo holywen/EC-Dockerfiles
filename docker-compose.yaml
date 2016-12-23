@@ -19,7 +19,7 @@ services:
   commanderserver2:
     depends_on:
       - db
-      - zoo1
+      - commanderserver
     build: "commanderServer"
     hostname: commanderserver2
     ports:
@@ -35,7 +35,7 @@ services:
   commanderserver3:
     depends_on:
       - db
-      - zoo1
+      - commanderserver
     build: "commanderServer"
     hostname: commanderserver3
     ports:
