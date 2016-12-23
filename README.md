@@ -4,9 +4,13 @@ This is example docker files on how to put Electric Flow Server and Electric Flo
 
 ##USAGE:
 
-###Build a Docker Composer to start an Electric Flow Server and a Electric Flow Agent together:
+###Build and run a EFlow Cluster with Docker Compose:
 
-Step 1: copy ElectricFlow installer to commanderBase folder
+Step 1: copy ElectricFlow installer to commanderBase folder and Run:
+
+```
+   cd commanderBase && ./build.sh
+```
 
 Step 2: copy ElectricFlow license.xml to conf folder
 
