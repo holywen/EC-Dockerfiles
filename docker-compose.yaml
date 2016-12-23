@@ -13,7 +13,6 @@ services:
     volumes:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
-      - ./builtin:/opt/electriccloud/electriccommander/builtin
       - ./conf:/opt/electriccloud/electriccommander/conf
       - ./conf/tmp1:/opt/electriccloud/electriccommander/conf/tmp
       - ./logs/server:/opt/electriccloud/electriccommander/logs
@@ -31,7 +30,6 @@ services:
     volumes:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
-      - ./builtin:/opt/electriccloud/electriccommander/builtin
       - ./conf:/opt/electriccloud/electriccommander/conf
       - ./conf/tmp2:/opt/electriccloud/electriccommander/conf/tmp
       - ./logs/server2:/opt/electriccloud/electriccommander/logs
@@ -49,7 +47,6 @@ services:
     volumes:
       - ./plugins:/opt/electriccloud/electriccommander/plugins
       - ./workspace:/opt/electriccloud/electriccommander/workspace
-      - ./builtin:/opt/electriccloud/electriccommander/builtin
       - ./conf:/opt/electriccloud/electriccommander/conf
       - ./conf/tmp3:/opt/electriccloud/electriccommander/conf/tmp
       - ./logs/server3:/opt/electriccloud/electriccommander/logs
