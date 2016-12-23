@@ -7,4 +7,6 @@ rm -fr plugins/*
 rm -fr workspace/*
 rm -fr repository-data/*
 rm -f conf/*_ready
+rm -fr logs/*
+rm -fr conf/tmp*
 
