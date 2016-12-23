@@ -4,7 +4,7 @@ This is example docker files on how to put Electric Flow Server and Electric Flo
 
 ##USAGE:
 
-###Build and run a EFlow Cluster with Docker Compose:
+###Build and run a 3 flow server nodes EFlow Cluster with Docker Compose:
 
 Step 1: copy ElectricFlow installer to commanderBase folder and Run:
 
