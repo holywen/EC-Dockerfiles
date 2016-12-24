@@ -1,10 +1,17 @@
 FROM holywen/commanderbase
 MAINTAINER Shaohua Wen
 
+ARG EFLOW_INSTALLER
+
+#we have to use a fixed hostname when building the docker image but this is not possible see: http://stackoverflow.com/questions/28898787/how-to-handle-specific-hostname-like-h-option-in-dockerfile
+#so we use the script to update the server name settings in command server
 RUN addgroup ubuntu
 RUN useradd -m -g ubuntu ubuntu
-RUN /tmp/ElectricFlow-* --mode silent --installAgent --installWeb --unixServerUser ubuntu --unixServerGroup ubuntu --unixAgentUser ubuntu --unixAgentGroup ubuntu --remoteServer haproxy
-RUN rm -f /tmp/ElectricFlow-*
+
+RUN wget http://flow:8000/${EFLOW_INSTALLER} -O /tmp/ElectricFlowInstaller && \
+    chmod +x /tmp/ElectricFlowInstaller && \
+    /tmp/ElectricFlowInstaller --mode silent --installAgent --installWeb --unixServerUser ubuntu --unixServerGroup ubuntu --unixAgentUser ubuntu --unixAgentGroup ubuntu --remoteServer haproxy && \
+    rm -f /tmp/ElectricFlowInstaller
 
 #disable the https rewrite rule in the web server
 RUN  sed -i -e 's/RewriteCond %{HTTPS} !=on/#RewriteCond %{HTTPS} !=on/g' /opt/electriccloud/electriccommander/apache/conf/httpd.conf

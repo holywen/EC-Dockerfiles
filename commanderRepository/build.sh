@@ -4,4 +4,4 @@ if [ "${EFLOW_INSTALLER}" == "" ];then
     exit 1
 fi
 
-docker build -t holywen/commanderagent --build-arg EFLOW_INSTALLER  .
+docker build -t holywen/commanderrepository --build-arg EFLOW_INSTALLER .
