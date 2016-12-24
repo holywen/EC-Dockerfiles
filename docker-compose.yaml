@@ -4,7 +4,7 @@ services:
     depends_on:
       - db
       - zoo1
-    image: holywen/commanderserver
+    image: holywen/commanderserver:${TAG}
     hostname: commanderserver
     ports:
       - 8000
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
       - commanderserver
-    image: holywen/commanderserver
+    image: holywen/commanderserver:${TAG}
     hostname: commanderserver2
     ports:
       - 8000
@@ -38,7 +38,7 @@ services:
     depends_on:
       - db
       - commanderserver
-    image: holywen/commanderserver
+    image: holywen/commanderserver:${TAG}
     hostname: commanderserver3
     ports:
       - 8000
@@ -54,7 +54,7 @@ services:
   commanderapache:
     depends_on:
       - commanderserver
-    image: holywen/commanderapache
+    image: holywen/commanderapache:${TAG}
     hostname: commanderapache
     ports:
       - 80
@@ -66,7 +66,7 @@ services:
   localagent:
     depends_on:
       - commanderserver
-    image: holywen/commanderagent
+    image: holywen/commanderagent:${TAG}
     hostname: localagent
     ports:
       - 6800
@@ -76,7 +76,7 @@ services:
       - ./workspace:/opt/electriccloud/electriccommander/workspace
 
   repository:
-    image: holywen/commanderrepository
+    image: holywen/commanderrepository:${TAG}
     hostname: repository
     ports:
       - 8200
