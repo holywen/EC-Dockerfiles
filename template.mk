@@ -5,10 +5,10 @@ all: build push pull
 build:
 	EFLOW_INSTALLER=$(EFLOW_INSTALLER) docker build -t holywen/$(MODULE_NAME):$(TAG) --build-arg EFLOW_INSTALLER .
 
-push:
+push: build
 	docker push holywen/$(MODULE_NAME):$(TAG)
 
-pull:
+pull: 
 	docker push holywen/$(MODULE_NAME):$(TAG)
 
 clean: cleandata cleanimages
