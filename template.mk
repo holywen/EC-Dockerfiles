@@ -11,7 +11,19 @@ push:
 pull:
 	docker push holywen/$(MODULE_NAME):$(TAG)
 
-clean: cleandata clean images
+clean: cleandata cleanimages
+
+cleanimages:
+	docker rmi holywen/$(MODULE_NAME):$(TAG)
 
 cleandata:
-	rm -fr ../repository-data/*
+	rm -fr db-data/*
+	rm -fr zoo/zoo1/*
+	rm -fr zoo/zoo2/*
+	rm -fr zoo/zoo3/*
+	rm -fr plugins/*
+	rm -fr workspace/*
+	rm -fr repository-data/*
+	rm -f conf/*_ready
+	rm -fr logs/*
+	rm -fr conf/tmp*
