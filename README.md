@@ -42,7 +42,7 @@ Available versions include: 6.0.0, 6.0.6, 7.0.0, 7.0.1, latest
 
 ####Clean up the data which generated when runs the cluster
 ```
-  ./clean.sh
+  make cleandata
 ```
 
 ###Build your own cluster images
