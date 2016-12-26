@@ -14,7 +14,7 @@ Step 2: Run:
   docker-compose up -d
   docker-compose logs -f
 ```
-You'll run the latest version of Flow server
+You'll run the latest version of Flow Server
 
 Step 3: open http://your.docker.machine.ip:1936/haproxy?stats
 
@@ -37,7 +37,7 @@ or
   export TAG=7.0.0
   docker-compose up -d
 ```
-Available versions include: 7.0.0, latest
+Available versions include: 6.0.0, 6.0.6, 7.0.0, 7.0.1, latest
 
 ####Clean up the data which generated when runs the cluster
 ```
