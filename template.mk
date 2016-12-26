@@ -15,7 +15,7 @@ push: build
 	docker push holywen/$(MODULE_NAME):$(TAG)
 
 pull: 
-	docker push holywen/$(MODULE_NAME):$(TAG)
+	docker pull holywen/$(MODULE_NAME):$(TAG)
 
 clean: cleandata cleanimages
 
