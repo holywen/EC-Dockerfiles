@@ -49,15 +49,21 @@ Since docker 1.12 doesn't support map local volumes when build, and  due to secu
 
 Because the size of Flow server installer is quite big, COPY it to the container and run the installation will add new layers, which increase the size of the image and cause long download time, the workaround is download it from network, run and delete it afterwards with in a single command line.
 
-So we need to setup a web server, with the hostname "flow" pointed to it and listening to port "8000", set the environment variable named "EFLOW\_INSTALLER" and make sure that you can download the flow server installer from http://flow:8000/${EFLOW\_INSTALLER}
+So we need to download it from somewhere, for example we can wget it from ftp.electric-cloud.com with a user/pass and download path provided
 
 ```
-  EFLOW_INSTALLER=ElectricFlow-7.0.0.111324 ./build.sh 
+  EFLOW_INSTALLER=ElectricFlow-7.0.0.111324 \
+  EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86' \
+  EFLOW_DOWNLOAD_USER=swen EFLOW_DOWNLOAD_PASS='changeme' \
+  make build
 ```
 or
 ```
   export EFLOW_INSTALLER=ElectricFlow-7.0.0.111324
-  ./build.sh 
+  export EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86'
+  export EFLOW_DOWNLOAD_USER=swen
+  export EFLOW_DOWNLOAD_PASS='changeme'
+  make build
 ```
 
 This will build several images.
