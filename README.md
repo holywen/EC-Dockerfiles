@@ -55,6 +55,7 @@ So we need to download it from somewhere, for example we can wget it from ftp.el
   EFLOW_INSTALLER=ElectricFlow-7.0.0.111324 \
   EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86' \
   EFLOW_DOWNLOAD_USER=swen EFLOW_DOWNLOAD_PASS='changeme' \
+  TAG=7.0.0 \
   make build
 ```
 or
@@ -63,6 +64,7 @@ or
   export EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86'
   export EFLOW_DOWNLOAD_USER=swen
   export EFLOW_DOWNLOAD_PASS='changeme'
+  export TAG=7.0.0
   make build
 ```
 
