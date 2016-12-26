@@ -11,6 +11,7 @@ Step 1: copy license.xml to conf folder
 Step 2: Run:
 
 ```
+  export TAG=latest
   docker-compose up -d
   docker-compose logs -f
 ```
