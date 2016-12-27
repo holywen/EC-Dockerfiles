@@ -24,9 +24,7 @@ cleanimages:
 
 cleandata:
 	rm -fr db-data/*
-	rm -fr zoo/zoo1/*
-	rm -fr zoo/zoo2/*
-	rm -fr zoo/zoo3/*
+	rm -fr zoo/*
 	rm -fr plugins/*
 	rm -fr workspace/*
 	rm -fr repository-data/*
