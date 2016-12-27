@@ -20,9 +20,7 @@ Step 3: open http://your.docker.machine.ip:1936/haproxy?stats
 
 Step 4: when you see commander backend is up and running (when the commander servers turns green in haproxy page), 
 ```
-  docker ps
-  docker exec -it <any of commanderserver container id> bash
-  sh /tmp/scripts/import_license_and_create_resource.sh
+  docker exec $(docker ps |grep commanderserver_1|awk '{print $1}')   /tmp/scripts/import_license_and_create_resource.sh
 ```
 
 Step 5: open https://your.docker.machine.ip and login with admin/changeme
