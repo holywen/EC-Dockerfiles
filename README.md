@@ -28,6 +28,11 @@ Step 4: when you see commander backend is up and running (when the commander ser
 
 Step 5: open https://your.docker.machine.ip and login with admin/changeme
 
+### Shutdown the cluster
+```
+  docker-compose down
+```
+
 ####Try other versions
 If you want to run a specific version of Flow server version, try:
 ```
