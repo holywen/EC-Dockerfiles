@@ -1,4 +1,4 @@
-.PHONY: all build push pull cleandata cleanimages clean cleanall
+.PHONY: $(COMMON_TARGETS)
 
 all: build push pull
 
