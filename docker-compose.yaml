@@ -6,6 +6,7 @@ services:
       - zoo1
     image: holywen/commanderserver:${TAG}
     hostname: commanderserver
+    restart: always
     ports:
       - 8000
       - 8443
@@ -23,6 +24,7 @@ services:
       - commanderserver
     image: holywen/commanderserver:${TAG}
     hostname: commanderserver2
+    restart: always
     ports:
       - 8000
       - 8443
@@ -40,6 +42,7 @@ services:
       - commanderserver
     image: holywen/commanderserver:${TAG}
     hostname: commanderserver3
+    restart: always
     ports:
       - 8000
       - 8443
@@ -56,6 +59,7 @@ services:
       - commanderserver
     image: holywen/commanderapache:${TAG}
     hostname: commanderapache
+    restart: always
     ports:
       - 80
       - 443
@@ -68,6 +72,7 @@ services:
       - commanderserver
     image: holywen/commanderagent:${TAG}
     hostname: localagent
+    restart: always
     ports:
       - 6800
       - 7800
@@ -78,6 +83,7 @@ services:
   repository:
     image: holywen/commanderrepository:${TAG}
     hostname: repository
+    restart: always
     ports:
       - 8200
     volumes:
@@ -135,6 +141,7 @@ services:
   haproxy:
     image: haproxy
     hostname: haproxy
+    restart: always
     ports:
       - 80:80
       - 443:443
