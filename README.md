@@ -27,7 +27,7 @@ Step 5: open https://your.docker.machine.ip and login with admin/changeme
 
 ### Shutdown the cluster
 ```
-  docker-compose down
+  docker-compose stop
 ```
 
 ####Try other versions
@@ -40,7 +40,11 @@ Available versions include: 6.0.0, 6.0.6, 7.0.0, 7.0.1, latest
 
 ####Clean up the data which generated when runs the cluster
 ```
-  make cleandata
+  make cleandata 
+```
+or
+```
+  make clean
 ```
 
 ###Build your own cluster images
