@@ -1,0 +1,74 @@
+version: '2'
+
+services:
+  commanderserver:
+    image: holywen/commanderserver:${TAG}
+    restart: always
+    ports:
+      - 8000
+      - 8443
+      - 61613
+    volumes:
+      - ./plugins:/opt/electriccloud/electriccommander/plugins
+      - ./workspace:/opt/electriccloud/electriccommander/workspace
+      - ./conf:/opt/electriccloud/electriccommander/conf
+      
+  commanderapache:
+    image: holywen/commanderapache:${TAG}
+    restart: always
+    ports:
+      - 80
+      - 443
+    volumes:
+      - ./plugins:/opt/electriccloud/electriccommander/plugins
+      - ./workspace:/opt/electriccloud/electriccommander/workspace
+      
+  commanderagent:
+    image: holywen/commanderagent:${TAG}
+    restart: always
+    ports:
+      - 6800
+      - 7800
+    volumes:
+      - ./plugins:/opt/electriccloud/electriccommander/plugins
+      - ./workspace:/opt/electriccloud/electriccommander/workspace
+
+  commanderrepository:
+    image: holywen/commanderrepository:${TAG}
+    restart: always
+    ports:
+      - 8200
+    volumes:
+      - ./plugins:/opt/electriccloud/electriccommander/plugins
+      - ./workspace:/opt/electriccloud/electriccommander/workspace
+      - ./repository-data:/opt/electriccloud/electriccommander/repository-data
+      
+  mysql:
+     image: mysql:5.7
+     volumes:
+       - ./db-data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: ecdb
+       MYSQL_DATABASE: ecdb
+       MYSQL_USER: ecdb
+       MYSQL_PASSWORD: ecdb
+
+  zoo:
+    image: zookeeper
+    restart: always
+    ports:
+      - 2181
+
+  haproxy:
+    image: haproxy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 8000:8000
+      - 8443:8443
+      - 61613:61613
+      - 1936:1936
+    volumes:
+      - ./haproxy/:/usr/local/etc/haproxy/
