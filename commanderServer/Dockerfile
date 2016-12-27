@@ -27,6 +27,6 @@ RUN chmod +x /tmp/initiate_zoo.sh
 COPY ./import_license_and_create_resource.sh /tmp
 RUN chmod +x /tmp/import_license_and_create_resource.sh
 
-EXPOSE 8443 443 61613 8000
+EXPOSE 8443 443 61613 8000 5445-5449
 
 CMD /tmp/initiate_zoo.sh && /etc/init.d/commanderServer start && tail -F /opt/electriccloud/electriccommander/logs/commander-`hostname`.log
