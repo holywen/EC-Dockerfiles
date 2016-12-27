@@ -22,7 +22,7 @@ Step 4: when you see commander backend is up and running (when the commander ser
 ```
   docker ps
   docker exec -it <any of commanderserver container id> bash
-  /tmp/import_license_and_create_resource.sh
+  sh /tmp/scripts/import_license_and_create_resource.sh
 ```
 
 Step 5: open https://your.docker.machine.ip and login with admin/changeme
