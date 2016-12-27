@@ -23,4 +23,4 @@ RUN echo "set.default.COMMANDER_IGNORE_PASSKEY_MISMATCH=1" >> /opt/electriccloud
 
 EXPOSE 8443 443 61613 8000 5445-5449
 
-CMD /tmp/initiate_zoo.sh && /etc/init.d/commanderServer start && tail -F /opt/electriccloud/electriccommander/logs/commander-`hostname`.log
+CMD chmod +x /tmp/scripts/*.sh && /tmp/scripts/initiate_zoo.sh && /etc/init.d/commanderServer start && tail -F /opt/electriccloud/electriccommander/logs/commander-`hostname`.log
