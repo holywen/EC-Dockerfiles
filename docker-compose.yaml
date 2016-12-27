@@ -7,7 +7,7 @@ services:
       service: commanderserver
     depends_on:
       - db
-      - zoo1
+      - zookeeper1
     hostname: commanderserver
     volumes:
       - ./conf/tmp1:/opt/electriccloud/electriccommander/conf/tmp
@@ -67,38 +67,38 @@ services:
     hostname:
       db
 
-  zoo1:
+  zookeeper1:
     extends:
       file: common-services.yml
-      service: zoo
-    hostname: zoo1
+      service: zookeeper
+    hostname: zookeeper1
     environment:
       ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
     volumes:
-      - ./zoo/zoo1:/data
+      - ./zoo/zookeeper1:/data
       
-  zoo2:
+  zookeeper2:
     extends:
       file: common-services.yml
-      service: zoo
-    hostname: zoo2
+      service: zookeeper
+    hostname: zookeeper2
     environment:
       ZOO_MY_ID: 2
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
     volumes:
-      - ./zoo/zoo2:/data
+      - ./zoo/zookeeper2:/data
       
-  zoo3:
+  zookeeper3:
     extends:
       file: common-services.yml
-      service: zoo
-    hostname: zoo3
+      service: zookeeper
+    hostname: zookeeper3
     environment:
       ZOO_MY_ID: 3
-      ZOO_SERVERS: server.1=zoo1:2888:3888 server.2=zoo2:2888:3888 server.3=zoo3:2888:3888
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
     volumes:
-      - ./zoo/zoo3:/data
+      - ./zoo/zookeeper3:/data
 
   haproxy:
     extends:

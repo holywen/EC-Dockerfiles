@@ -54,7 +54,7 @@ services:
        MYSQL_USER: ecdb
        MYSQL_PASSWORD: ecdb
 
-  zoo:
+  zookeeper:
     image: zookeeper
     restart: always
     ports:
