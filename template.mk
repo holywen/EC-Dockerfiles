@@ -1,4 +1,4 @@
-.PHONY: all build push pull cleandata cleanimages clean
+.PHONY: all build push pull cleandata cleanimages clean cleanall
 
 all: build push pull
 
@@ -17,7 +17,9 @@ push: build
 pull: 
 	docker pull holywen/$(MODULE_NAME):$(TAG)
 
-clean: cleandata cleanimages
+clean: cleandata
+
+cleanall: cleandata cleanimages
 
 cleanimages:
 	docker rmi holywen/$(MODULE_NAME):$(TAG)

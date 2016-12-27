@@ -5,4 +5,4 @@ EFLOW_INSTALLER_DOWNLOAD_PATH ?= ftp.electric-cloud.com/ElectricFlow/release_7.0
 EFLOW_DOWNLOAD_USER ?= swen
 EFLOW_DOWNLOAD_PASS ?= changeme
 
-COMMON_TARGETS = all build push pull cleandata cleanimages clean
+COMMON_TARGETS = all build push pull cleandata cleanimages clean cleanall
