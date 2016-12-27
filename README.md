@@ -66,7 +66,7 @@ Afterwards you can run cluster with those images as described previously.
 
 
 ##AUTHOR:
-Shaohua Wen, Electric Cloud Professional Service Engineer swen@electric-cloud.com, with original dockerfile example from Nikhil Vaze <nvaze@electric-cloud.com>
+Shaohua Wen, Electric Cloud Solution Engineer swen@electric-cloud.com, with original dockerfile example from Nikhil Vaze <nvaze@electric-cloud.com>
 
 
 ##DISCLAIMER:
