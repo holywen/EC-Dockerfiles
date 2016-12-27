@@ -36,10 +36,6 @@ Step 5: open https://your.docker.machine.ip and login with admin/changeme
 ####Try other versions
 If you want to run a specific version of Flow server version, try:
 ```
-  TAG=7.0.0 docker-compose up -d
-```
-or
-```
   export TAG=7.0.0
   docker-compose up -d
 ```
@@ -57,14 +53,6 @@ Because the size of Flow server installer is quite big, COPY it to the container
 
 So we need to download it from somewhere, for example we can wget it from ftp.electric-cloud.com with a user/pass and download path provided
 
-```
-  EFLOW_INSTALLER=ElectricFlow-7.0.0.111324 \
-  EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86' \
-  EFLOW_DOWNLOAD_USER=swen EFLOW_DOWNLOAD_PASS='changeme' \
-  TAG=7.0.0 \
-  make build
-```
-or
 ```
   export EFLOW_INSTALLER=ElectricFlow-7.0.0.111324
   export EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86'
