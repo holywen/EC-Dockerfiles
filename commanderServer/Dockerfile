@@ -12,7 +12,6 @@ RUN addgroup ubuntu
 RUN useradd -m -g ubuntu ubuntu
 
 RUN wget ftp://${EFLOW_DOWNLOAD_USER}:${EFLOW_DOWNLOAD_PASS}@${EFLOW_INSTALLER_DOWNLOAD_PATH}/${EFLOW_INSTALLER} -O /tmp/ElectricFlowInstaller && \
-
     chmod +x /tmp/ElectricFlowInstaller && \
     /tmp/ElectricFlowInstaller --mode silent --installServer --unixServerUser ubuntu --unixServerGroup ubuntu \
         --unixAgentUser ubuntu --unixAgentGroup ubuntu &&\
