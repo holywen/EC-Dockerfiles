@@ -23,11 +23,11 @@ cleanimages:
 	docker rmi holywen/$(MODULE_NAME):$(TAG)
 
 cleandata:
-	rm -fr db-data/*
-	rm -fr zoo/*
-	rm -fr plugins/*
-	rm -fr workspace/*
-	rm -fr repository-data/*
-	rm -f conf/*_ready
-	rm -fr logs/*
-	rm -fr conf/tmp*
+	rm -fr ../db-data/*
+	rm -fr ../zoo/*
+	rm -fr ../plugins/*
+	rm -fr ../workspace/*
+	rm -fr ../repository-data/*
+	rm -f ../conf/*_ready
+	rm -fr ../logs/*
+	rm -fr ../conf/tmp*
