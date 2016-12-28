@@ -64,8 +64,7 @@ services:
     extends:
       file: common-services.yml
       service: mysql
-    hostname:
-      db
+    hostname: db
 
   zookeeper1:
     extends:
