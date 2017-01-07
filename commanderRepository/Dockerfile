@@ -9,7 +9,7 @@ ARG EFLOW_DOWNLOAD_PASS
 RUN addgroup ubuntu
 RUN useradd -m -g ubuntu ubuntu
 
-RUN wget ftp://${EFLOW_DOWNLOAD_USER}:${EFLOW_DOWNLOAD_PASS}@${EFLOW_INSTALLER_DOWNLOAD_PATH}/${EFLOW_INSTALLER} -O /tmp/ElectricFlowInstaller && \
+RUN curl ftps://${EFLOW_DOWNLOAD_USER}:${EFLOW_DOWNLOAD_PASS}@${EFLOW_INSTALLER_DOWNLOAD_PATH}/${EFLOW_INSTALLER} -o /tmp/ElectricFlowInstaller && \
     chmod +x /tmp/ElectricFlowInstaller && \
     /tmp/ElectricFlowInstaller --mode silent --installRepository --installAgent --unixServerUser ubuntu --unixServerGroup ubuntu --unixAgentUser ubuntu --unixAgentGroup ubuntu --remoteServer haproxy && \
     rm -f /tmp/ElectricFlowInstaller
