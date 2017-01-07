@@ -49,6 +49,18 @@ or
   make clean
 ```
 
+### Save images
+
+```TAG=7.1.0 make save```
+
+Then images will be saved to your images folder, so  you don't need to download again later.
+
+### Load images 
+
+```TAG=7.1.0 make load```
+
+This will load your previously saved images to docker
+
 ###Build your own cluster images
 
 Because the size of Flow server installer is quite big, COPY it to the container and run the installation will add new layers, which increase the size of the image and cause long download time, the workaround is download it from network, run and delete it afterwards with in a single command line. But docker 1.12 doesn't support map local volumes when build yet, and  due to security reason, docker doesn't allow connection from within the container to the host machine either.So we cannot talk to the docker container host from the container.

@@ -17,6 +17,12 @@ push: build
 pull: 
 	docker pull holywen/$(MODULE_NAME):$(TAG)
 
+save: pull
+	docker save -o ../images/$(MODULE_NAME)_$(TAG).tar holywen/$(MODULE_NAME):$(TAG)
+    
+load:
+	docker load -i ../images/$(MODULE_NAME)_$(TAG).tar
+
 clean: cleandata
 
 cleanall: cleandata cleanimages

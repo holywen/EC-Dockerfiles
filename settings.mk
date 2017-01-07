@@ -5,4 +5,4 @@ EFLOW_INSTALLER_DOWNLOAD_PATH ?= electric-cloud.sharefileftp.com/products/flow/r
 EFLOW_DOWNLOAD_USER ?= electric-cloud%2Fswen1%40electric-cloud.com
 EFLOW_DOWNLOAD_PASS ?= changeme
 
-COMMON_TARGETS = all build push pull cleandata cleanimages clean cleanall
+COMMON_TARGETS = all build push pull cleandata cleanimages clean cleanall save load
