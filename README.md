@@ -6,7 +6,7 @@ This is example on how to create and run Electric Flow Server cluster with Docke
 
 ###Run a Electric Flow Server Cluster with Docker Compose:
 
-####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 5 GB, or you'll have really bad performance due to disk swapping.
+####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 5 GB, or you'll have really bad performance due to disk swapping or even not able to start up.
 
 Step 1: copy license.xml to conf folder
 
@@ -73,7 +73,7 @@ So we need to download it from somewhere, for example we can wget it from ftp.el
   export EFLOW_INSTALLER_DOWNLOAD_PATH='electric-cloud.sharefileftp.com/products/flow/release_7.1/7.1.0.113861/linux/x86'
   export EFLOW_DOWNLOAD_USER=electric-cloud%2Fswen1%40electric-cloud.com
   export EFLOW_DOWNLOAD_PASS='changeme'
-  export TAG=7.0.0
+  export TAG=7.1.0
   make build
 ```
 
