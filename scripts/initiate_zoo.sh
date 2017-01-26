@@ -3,8 +3,8 @@ set -e
 
 export PATH=$PATH:/opt/electriccloud/electriccommander/bin
 
-echo "sleep 20 senconds to wait zookeeper start"
-sleep 20
+echo "sleep 10 senconds to wait zookeeper start"
+sleep 10
 
 if [ ! -f /opt/electriccloud/electriccommander/conf/zoo_ready ]; then
   cd /opt/electriccloud/electriccommander/conf
