@@ -64,15 +64,10 @@ This will load your previously saved images to docker
 
 ###Build your own cluster images
 
-Because the size of Flow server installer is quite big, COPY it to the container and run the installation will add new layers, which increase the size of the image and cause long download time, the workaround is download it from network, run and delete it afterwards with in a single command line. But docker 1.12 doesn't support map local volumes when build yet, and  due to security reason, docker doesn't allow connection from within the container to the host machine either, we cannot talk to the docker container host from the container.
-
-So we need to download it from somewhere, for example we can wget it from ftp.electric-cloud.com with a user/pass and download path provided
+Put the Electric Flow installer to the EC-Dockerfiles folder and run:
 
 ```
   export EFLOW_INSTALLER=ElectricFlow-7.1.0.113861
-  export EFLOW_INSTALLER_DOWNLOAD_PATH='electric-cloud.sharefileftp.com/products/flow/release_7.1/7.1.0.113861/linux/x86'
-  export EFLOW_DOWNLOAD_USER=electric-cloud%2Fswen1%40electric-cloud.com
-  export EFLOW_DOWNLOAD_PASS='changeme'
   export TAG=7.1.0
   make build
 ```

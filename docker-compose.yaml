@@ -69,8 +69,6 @@ services:
   interlock:
     image: ehazlett/interlock:master
     command: run -c /etc/interlock/config.toml
-    ports:
-        - 8080
     volumes:
         - ./interlock/config.toml:/etc/interlock/config.toml
         - ./interlock/haproxy.cfg.template:/usr/local/etc/interlock/haproxy.cfg.template
