@@ -6,7 +6,7 @@ This is example on how to create and run Electric Flow Server cluster with Docke
 
 ###Run a Electric Flow Server Cluster with Docker Compose:
 
-####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 5 GB, or you'll have really bad performance due to disk swapping or even not able to start up.
+####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 3 GB + n * 3 GB (n=number of commander instances), or you'll have really bad performance due to disk swapping or even not able to start up the cluster.
 
 Step 1: copy license.xml to conf folder
 
