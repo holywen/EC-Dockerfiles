@@ -8,35 +8,9 @@ services:
     depends_on:
       - db
       - zookeeper1
-    hostname: commanderserver
-    volumes:
-      - ./conf/tmp1:/opt/electriccloud/electriccommander/conf/tmp
-      - ./logs/server:/opt/electriccloud/electriccommander/logs
-      
-  commanderserver2:
-    extends:
-      file: common-services.yml
-      service: commanderserver
-    depends_on:
-      - db
-      - commanderserver
-    hostname: commanderserver2
-    volumes:
-      - ./conf/tmp2:/opt/electriccloud/electriccommander/conf/tmp
-      - ./logs/server2:/opt/electriccloud/electriccommander/logs
-
-  commanderserver3:
-    extends:
-      file: common-services.yml
-      service: commanderserver
-    depends_on:
-      - db
-      - commanderserver
-    hostname: commanderserver3
-    restart: always
-    volumes:
-      - ./conf/tmp3:/opt/electriccloud/electriccommander/conf/tmp
-      - ./logs/server3:/opt/electriccloud/electriccommander/logs
+    labels:
+        - "interlock.hostname=commanderserver"
+        - "interlock.domain=local"
       
   commanderapache:
     extends:
@@ -44,7 +18,6 @@ services:
       service: commanderapache
     depends_on:
       - commanderserver
-    hostname: commanderapache
       
   localagent:
     extends:
@@ -52,25 +25,21 @@ services:
       service: commanderagent
     depends_on:
       - commanderserver
-    hostname: localagent
 
   repository:
     extends:
       file: common-services.yml
       service: commanderrepository
-    hostname: repository
       
   db:
     extends:
       file: common-services.yml
       service: mysql
-    hostname: db
 
   zookeeper1:
     extends:
       file: common-services.yml
       service: zookeeper
-    hostname: zookeeper1
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
@@ -81,7 +50,6 @@ services:
     extends:
       file: common-services.yml
       service: zookeeper
-    hostname: zookeeper2
     environment:
       ZOO_MY_ID: 2
       ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
@@ -92,15 +60,31 @@ services:
     extends:
       file: common-services.yml
       service: zookeeper
-    hostname: zookeeper3
     environment:
       ZOO_MY_ID: 3
       ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
     volumes:
       - ./zoo/zookeeper3:/data
 
+  interlock:
+    image: ehazlett/interlock:master
+    command: run -c /etc/interlock/config.toml
+    ports:
+        - 8080
+    volumes:
+        - ./interlock/config.toml:/etc/interlock/config.toml
+        - ./interlock/haproxy.cfg.template:/usr/local/etc/interlock/haproxy.cfg.template
+        - /var/run/docker.sock:/var/run/docker.sock
+       
   haproxy:
     extends:
       file: common-services.yml
       service: haproxy
+    labels:
+        - "interlock.ext.name=haproxy"
+    links:
+        - interlock:interlock
+    depends_on:
+        - interlock
+        - commanderserver
 

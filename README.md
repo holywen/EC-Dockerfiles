@@ -4,7 +4,7 @@ This is example on how to create and run Electric Flow Server cluster with Docke
 
 ##USAGE:
 
-###Run a 3 nodes Electric Flow Server Cluster with Docker Compose:
+###Run a Electric Flow Server Cluster with Docker Compose:
 
 ####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 5 GB, or you'll have really bad performance due to disk swapping.
 
@@ -15,6 +15,7 @@ Step 2: Run:
 ```
   docker-compose up -d
   docker-compose logs -f
+  docker-compose scale commanderserver=n #replace n to number of instances you want to run
 ```
 You'll run the latest version of Flow Server
 
@@ -63,14 +64,14 @@ This will load your previously saved images to docker
 
 ###Build your own cluster images
 
-Because the size of Flow server installer is quite big, COPY it to the container and run the installation will add new layers, which increase the size of the image and cause long download time, the workaround is download it from network, run and delete it afterwards with in a single command line. But docker 1.12 doesn't support map local volumes when build yet, and  due to security reason, docker doesn't allow connection from within the container to the host machine either.So we cannot talk to the docker container host from the container.
+Because the size of Flow server installer is quite big, COPY it to the container and run the installation will add new layers, which increase the size of the image and cause long download time, the workaround is download it from network, run and delete it afterwards with in a single command line. But docker 1.12 doesn't support map local volumes when build yet, and  due to security reason, docker doesn't allow connection from within the container to the host machine either, we cannot talk to the docker container host from the container.
 
 So we need to download it from somewhere, for example we can wget it from ftp.electric-cloud.com with a user/pass and download path provided
 
 ```
-  export EFLOW_INSTALLER=ElectricFlow-7.0.0.111324
-  export EFLOW_INSTALLER_DOWNLOAD_PATH='ftp.electric-cloud.com/ElectricFlow/release_7.0/7.0.0.111324/linux/x86'
-  export EFLOW_DOWNLOAD_USER=swen
+  export EFLOW_INSTALLER=ElectricFlow-7.1.0.113861
+  export EFLOW_INSTALLER_DOWNLOAD_PATH='electric-cloud.sharefileftp.com/products/flow/release_7.1/7.1.0.113861/linux/x86'
+  export EFLOW_DOWNLOAD_USER=electric-cloud%2Fswen1%40electric-cloud.com
   export EFLOW_DOWNLOAD_PASS='changeme'
   export TAG=7.0.0
   make build
