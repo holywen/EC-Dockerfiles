@@ -14,8 +14,8 @@ Step 2: Run:
 
 ```
   docker-compose up -d
-  docker-compose logs -f
   docker-compose scale commanderserver=n #replace n to number of instances you want to run
+  docker-compose logs -f
 ```
 You'll run the latest version of Flow Server
 
