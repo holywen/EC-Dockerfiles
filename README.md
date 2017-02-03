@@ -2,6 +2,10 @@
 ##DESCRIPTION:
 This is example on how to create and run Electric Flow Server cluster with Docker Compose.
 
+## Diagram:
+
+![graph.png]()
+
 ##USAGE:
 
 ###Run a Electric Flow Server Cluster with Docker Compose:
