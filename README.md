@@ -4,7 +4,7 @@ This is example on how to create and run Electric Flow Server cluster with Docke
 
 ## Diagram:
 
-![graph.png]()
+![](graph.png)
 
 ##USAGE:
 
