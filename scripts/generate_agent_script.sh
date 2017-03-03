@@ -7,7 +7,7 @@ echo 'export PATH=$PATH:/opt/electriccloud/electriccommander/bin' >> $AGENT_SCRI
 
 for i in $(seq 1 $(docker ps |grep localagent | wc -l))
 do
-    AGENT_HOST=$(docker ps|grep localagent_$i|awk '{print $1}')
+    AGENT_HOST=$(docker ps|grep "localagent_$i$"|awk '{print $1}')
     echo $AGENT_HOST
     echo "ectool deleteResource  local$i"  >>  $AGENT_SCRIPT_FILE
     echo "ectool createResource local$i --hostName $AGENT_HOST --pools default" >> $AGENT_SCRIPT_FILE
