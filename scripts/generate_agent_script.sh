@@ -13,3 +13,6 @@ do
     echo "ectool createResource local$i --hostName $AGENT_HOST --pools default" >> $AGENT_SCRIPT_FILE
     echo "ectool pingResource local$i" >> $AGENT_SCRIPT_FILE
 done
+
+docker exec $(docker ps |grep commanderserver_1|awk '{print $1}')   /tmp/scripts/create_agents.sh
+
