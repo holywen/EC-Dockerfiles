@@ -4,6 +4,7 @@ AGENT_SCRIPT_FILE=create_agents.sh
 echo "#!/bin/bash" > $AGENT_SCRIPT_FILE
 
 echo 'export PATH=$PATH:/opt/electriccloud/electriccommander/bin' >> $AGENT_SCRIPT_FILE
+echo 'ectool login admin changeme' >>  $AGENT_SCRIPT_FILE
 
 for i in $(seq 1 $(docker ps |grep localagent | wc -l))
 do
