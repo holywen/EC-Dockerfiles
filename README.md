@@ -40,10 +40,10 @@ Step 5: open https://your.docker.machine.ip and login with admin/changeme
 ####Try other versions
 If you want to run a specific version of Flow server version, try:
 ```
-  export TAG=7.0.0
+  export TAG=7.2.0
   docker-compose up -d
 ```
-Available versions include: **6.0.0, 6.0.6, 7.0.0, 7.0.1, 7.1.0, latest**
+Available versions include: **6.0.0, 6.0.6, 7.0.0, 7.0.1, 7.1.0, 7.2.0, latest**
 
 ####Clean up the data which generated when runs the cluster
 ```
@@ -56,13 +56,13 @@ or
 
 ### Save images
 
-```TAG=7.1.0 make save```
+```TAG=7.2.0 make save```
 
 Then images will be saved to your images folder, so  you don't need to download again later.
 
 ### Load images 
 
-```TAG=7.1.0 make load```
+```TAG=7.2.0 make load```
 
 This will load your previously saved images to docker
 
