@@ -6,11 +6,11 @@ This is example on how to create and run Electric Flow Server cluster with Docke
 
 ![](graph.png)
 
-##USAGE:
+## USAGE:
 
-###Run a Electric Flow Server Cluster with Docker Compose:
+### Run a Electric Flow Server Cluster with Docker Compose:
 
-####Gentle reminder: You'll need to first increase your memory of your docker machine to at least 3 GB + n * 3 GB (n=number of commander instances), or you'll have really bad performance due to disk swapping or even not able to start up the cluster.
+#### Gentle reminder: You'll need to first increase your memory of your docker machine to at least 3 GB + n * 3 GB (n=number of commander instances), or you'll have really bad performance due to disk swapping or even not able to start up the cluster.
 
 Step 1: copy license.xml to conf folder
 
@@ -37,7 +37,7 @@ Step 5: open https://your.docker.machine.ip and login with admin/changeme
   docker-compose stop
 ```
 
-####Try other versions
+#### Try other versions
 If you want to run a specific version of Flow server version, try:
 ```
   export TAG=7.2.0
@@ -45,7 +45,7 @@ If you want to run a specific version of Flow server version, try:
 ```
 Available versions include: **6.0.0, 6.0.6, 7.0.0, 7.0.1, 7.1.0, 7.2.0, latest**
 
-####Clean up the data which generated when runs the cluster
+#### Clean up the data which generated when runs the cluster
 ```
   make cleandata 
 ```
@@ -66,7 +66,7 @@ Then images will be saved to your images folder, so  you don't need to download 
 
 This will load your previously saved images to docker
 
-###Build your own cluster images
+### Build your own cluster images
 
 Put the Electric Flow installer to the EC-Dockerfiles folder and run:
 
@@ -80,9 +80,9 @@ This will build several images.
 Afterwards you can run cluster with those images as described previously.
 
 
-##AUTHOR:
+## AUTHOR:
 Shaohua Wen, Electric Cloud Solution Engineer swen@electric-cloud.com, with original dockerfile example from Nikhil Vaze <nvaze@electric-cloud.com>
 
 
-##DISCLAIMER:
+## DISCLAIMER:
 This module is not officially supported by Electric Cloud.
