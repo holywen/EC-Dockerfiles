@@ -11,7 +11,7 @@ do
     AGENT_HOST=$(docker ps|grep "localagent_$i$"|awk '{print $1}')
     echo $AGENT_HOST
     echo "ectool deleteResource  local$i"  >>  $AGENT_SCRIPT_FILE
-    echo "ectool createResource local$i --hostName $AGENT_HOST --pools default" >> $AGENT_SCRIPT_FILE
+    echo "ectool createResource local$i --hostName $AGENT_HOST --pools pool$(expr $i % 5)" >> $AGENT_SCRIPT_FILE
     echo "ectool pingResource local$i" >> $AGENT_SCRIPT_FILE
 done
 
